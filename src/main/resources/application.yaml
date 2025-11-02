@@ -1,0 +1,41 @@
+spring:
+  cloud:
+    gcp:
+      credentials:
+        location: file:src/main/resources/config-data.json
+      firestore:
+        project-id: odoonto-e06a7
+      core:
+        enabled: true
+      secretmanager:
+        enabled: false
+      pubsub:
+        enabled: false
+      storage:
+        enabled: false
+      datastore:
+        enabled: false
+      vision:
+        enabled: false
+      bigquery:
+        enabled: false
+  autoconfigure:
+    exclude:
+      - com.google.cloud.spring.autoconfigure.secretmanager.GcpSecretManagerAutoConfiguration
+      - com.google.cloud.spring.autoconfigure.pubsub.GcpPubSubAutoConfiguration
+      - com.google.cloud.spring.autoconfigure.storage.GcpStorageAutoConfiguration
+      - com.google.cloud.spring.autoconfigure.datastore.GcpDatastoreAutoConfiguration
+      - com.google.cloud.spring.autoconfigure.vision.GcpVisionAutoConfiguration
+
+# Configuración de logging
+logging:
+  level:
+    root: INFO
+
+# Mostrar errores de Spring
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param
+    include-exception: false
