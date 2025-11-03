@@ -158,8 +158,16 @@ La API REST proporciona los siguientes endpoints principales:
 
 2. Configurar credenciales de Firebase:
    - Crear un proyecto en Firebase Console
-   - Descargar el archivo de credenciales `firebase-service-account.json`
-   - Colocarlo en `src/main/resources/`
+   - Descargar el archivo de credenciales JSON de la cuenta de servicio
+   - Copiar el archivo `.env.example` a `.env` en la raíz del proyecto
+   - Abrir `.env` y completar con tus credenciales reales:
+     - `FIREBASE_PROJECT_ID`: ID del proyecto de Firebase
+     - `FIREBASE_PRIVATE_KEY_ID`: ID de la clave privada
+     - `FIREBASE_PRIVATE_KEY`: Clave privada completa (mantén los `\n` para saltos de línea)
+     - `FIREBASE_CLIENT_EMAIL`: Email de la cuenta de servicio
+     - `FIREBASE_CLIENT_ID`: ID del cliente
+     - `FIREBASE_CLIENT_X509_CERT_URL`: URL del certificado X509
+   - **IMPORTANTE**: El archivo `.env` NO se comitea en git por seguridad
 
 3. Compilar el proyecto:
    ```bash
